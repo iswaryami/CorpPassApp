@@ -1,11 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './HomePage';
 import FacilitiesList from './FacilitiesList';
 import Booking from './Booking.js';
 import Visitors from './Visitors.js';
-//import FacilitiesByID from './FacilitiesByID';
 
 function App() {
     return (
@@ -39,24 +37,5 @@ function App() {
         </Router>
     );
 }
-
-//function App() {
-//  return (
-//    //<div className="App">
-//      //{/*<header className="App-header">*/ }
-//          <div>
-//              <h1>Welcome to the Zoo Corp Pass Management App</h1>
-//            {/*<FacilityForm />*/}
-//          <FacilitiesList />
-//          {/*<Router>*/}
-//          {/*    <Routes>*/}
-//          {/*        <Route path="/" element={<FacilitiesList />} />*/}
-//          {/*        <Route path="/facilities/:id" element={<FacilitiesByID />} />*/}
-//          {/*    </Routes>*/}
-//          {/*</Router>*/}
-
-//    </div>
-//  );
-//}
 
 export default App;

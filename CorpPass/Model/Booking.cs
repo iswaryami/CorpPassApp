@@ -13,10 +13,5 @@ namespace CorpPass.Model
         public TimeSpan BookingTime { get; set; }
         public string Status { get; set; }
 
-        //[ForeignKey("FacilityId")]
-        //public Facility Facility { get; set; }
-
-        //[ForeignKey("VisitorId")]
-        //public Visitor Visitor { get; set; }
     }
 }

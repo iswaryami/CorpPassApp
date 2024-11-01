@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-//import { Link } from 'react-router-dom';
 import axios from 'axios';
-
-//import React, { useState } from 'react';
 
 function FacilitiesList() {
 
-    const [facilities, setFacilities] = useState([]); // Stores all facilities
-    const [facility, setFacility] = useState(null);   // Stores single facility
+    const [facilities, setFacilities] = useState([]); 
+    const [facility, setFacility] = useState(null);   
     const [error, setError] = useState(null);
     const [facilityId, setFacilityId] = useState('');
 
@@ -19,7 +16,7 @@ function FacilitiesList() {
 
             const data = await response.json();
             setFacilities(data);
-            setFacility(null); // Clear any single facility data
+            setFacility(null); 
         } catch (error) {
             setError(error.message);
         }
@@ -33,7 +30,7 @@ function FacilitiesList() {
 
             const data = await response.json();
             setFacility(data);
-            setFacilities([]); // Clear all facilities data
+            setFacilities([]); 
         } catch (error) {
             setError(error.message);
         }
@@ -47,10 +44,10 @@ function FacilitiesList() {
                 <input
                     type="text"
                     value={facilityId}
-                    onChange={(e) => setFacilityId(e.target.value)} // Update ID on input change
+                    onChange={(e) => setFacilityId(e.target.value)} 
                     placeholder="Enter Facility ID"
                 />
-                <button onClick={() => fetchFacilityById(facilityId)}>Get Facility by ID</button> {/* Replace 1 with the desired ID */}
+                <button onClick={() => fetchFacilityById(facilityId)}>Get Facility by ID</button> 
             </div>
 
             {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -58,7 +55,8 @@ function FacilitiesList() {
             {facilities.length > 0 && (
                 <ul>
                     {facilities.map(facility => (
-                        <li key={facility.id}>{facility.name}</li> // Assumes facility has an id and name
+                        <li key={facility.id}>{facility.name}</li> 
+
                     ))}
                 </ul>
             )}

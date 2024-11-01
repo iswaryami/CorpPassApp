@@ -10,7 +10,7 @@ const UpdateVisitor = ({ visitorId }) => {
     });
     const [error, setError] = useState(null);
 
-    // Fetch the existing visitor data when the component mounts
+
     useEffect(() => {
         const fetchVisitor = async () => {
             try {
@@ -23,7 +23,6 @@ const UpdateVisitor = ({ visitorId }) => {
         fetchVisitor();
     }, [visitorId]);
 
-    // Handle form input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setVisitor((prevVisitor) => ({
@@ -32,7 +31,7 @@ const UpdateVisitor = ({ visitorId }) => {
         }));
     };
 
-    // Handle form submission
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {

@@ -21,13 +21,6 @@ builder.Services.AddCors(options =>
                    .AllowAnyHeader();
         });
 });
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("AllowReactApp",
-//        policy => policy.WithOrigins("http://localhost:3001") // Use your React app's URL
-//                        .AllowAnyMethod()
-//                        .AllowAnyHeader());
-//});
 
 var app = builder.Build();
 

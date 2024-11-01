@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function VisitorsList() {
-    const [visitors, setVisitors] = useState([]); // Stores all visitors
-    const [visitor, setVisitor] = useState(null);  // Stores single visitor
+    const [visitors, setVisitors] = useState([]); 
+    const [visitor, setVisitor] = useState(null);  
     const [error, setError] = useState(null);
     const [visitorId, setVisitorId] = useState('');
 
@@ -12,7 +12,7 @@ function VisitorsList() {
         try {
             const response = await axios.get("https://localhost:7082/api/visitor");
             setVisitors(response.data);
-            setVisitor(null); // Clear any single visitor data
+            setVisitor(null); 
         } catch (error) {
             setError(error.message);
         }
@@ -23,7 +23,7 @@ function VisitorsList() {
         try {
             const response = await axios.get(`https://localhost:7082/api/visitor/${id}`);
             setVisitor(response.data);
-            setVisitors([]); // Clear all visitors data
+            setVisitors([]); 
         } catch (error) {
             setError(error.message);
         }
@@ -37,7 +37,7 @@ function VisitorsList() {
                 <input
                     type="text"
                     value={visitorId}
-                    onChange={(e) => setVisitorId(e.target.value)} // Update ID on input change
+                    onChange={(e) => setVisitorId(e.target.value)}
                     placeholder="Enter Visitor ID"
                 />
                 <button onClick={() => fetchVisitorById(visitorId)}>Get Visitor by ID</button>
@@ -48,7 +48,7 @@ function VisitorsList() {
             {visitors.length > 0 && (
                 <ul>
                     {visitors.map(visitor => (
-                        <li key={visitor.visitorId}>{visitor.name}</li> // Assumes visitor has visitorId and name
+                        <li key={visitor.visitorId}>{visitor.name}</li>
                     ))}
                 </ul>
             )}

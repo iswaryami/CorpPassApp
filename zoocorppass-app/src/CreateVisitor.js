@@ -6,7 +6,7 @@ const CreateVisitor = () => {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [address, setAddress] = useState('');
-    const [errorMessage, setErrorMessage] = useState(''); // To show validation messages
+    const [errorMessage, setErrorMessage] = useState(''); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -33,9 +33,7 @@ const CreateVisitor = () => {
             });
 
             if (response.ok) {
-                // Handle successful creation (e.g., show a success message or clear the form)
                 console.log('Visitor created successfully');
-                // Optionally reset the form fields
                 setName('');
                 setEmail('');
                 setPhoneNumber('');

@@ -12,8 +12,6 @@ namespace CorpPass.Model
             public int Capacity { get; set; }
             public string Location { get; set; }
             public string Amenities { get; set; }
-
-           // public List<Booking> Bookings { get; set; }
         
     }
 }

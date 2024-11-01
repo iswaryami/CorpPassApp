@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-//import { Link } from 'react-router-dom';
 import axios from 'axios';
-
-//import React, { useState } from 'react';
 
 function BookingList() {
 
-    const [bookings, setBookings] = useState([]); // Stores all facilities
-    const [booking, setBooking] = useState(null);   // Stores single facility
+    const [bookings, setBookings] = useState([]); 
+    const [booking, setBooking] = useState(null);   
     const [error, setError] = useState(null);
     const [bookingId, setBookingId] = useState('');
 
@@ -33,7 +30,7 @@ function BookingList() {
 
             const data = await response.json();
             setBooking(data);
-            setBookings([]); // Clear all facilities data
+            setBookings([]); 
         } catch (error) {
             setError(error.message);
         }
@@ -47,10 +44,10 @@ function BookingList() {
                 <input
                     type="text"
                     value={bookingId}
-                    onChange={(e) => setBookingId(e.target.value)} // Update ID on input change
+                    onChange={(e) => setBookingId(e.target.value)} 
                     placeholder="Enter Booking ID"
                 />
-                <button onClick={() => fetchFacilityById(bookingId)}>Get Booking by ID</button> {/* Replace 1 with the desired ID */}
+                <button onClick={() => fetchFacilityById(bookingId)}>Get Booking by ID</button> 
             </div>
 
             {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -58,7 +55,7 @@ function BookingList() {
             {bookings.length > 0 && (
                 <ul>
                     {bookings.map(booking => (
-                        <li key={booking.id}>{booking.visitorId}</li> // Assumes facility has an id and name
+                        <li key={booking.id}>{booking.visitorId}</li> 
                     ))}
                 </ul>
             )}

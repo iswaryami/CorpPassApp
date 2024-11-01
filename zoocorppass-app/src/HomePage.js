@@ -6,8 +6,6 @@ function HomePage() {
         <div>
             <h2>Welcome to Zoo Corp</h2>
             <p>Your go-to place for booking and managing zoo facilities.</p>
-            {/* Link to the Facilities page */}
-
         </div>
    );
 }

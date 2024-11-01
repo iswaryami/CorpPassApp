@@ -22,14 +22,11 @@ const Visitors = () => {
                 </ul>
             </nav>
 
-            {/* Define nested routes for booking operations */}
+
             <Routes>
                 <Route path="create" element={<CreateVisitor />} />
                 <Route path="view" element={<VisitorList />} />
                 <Route path="update" element={<UpdateVisitor />} />
-                {/*<Route path="view" element={<BookingList />} />*/}
-                {/*<Route path="view" element={<ViewBooking />} />*/}
-                {/* You can add more routes for viewing by ID, updating, etc. */}
             </Routes>
         </div>
     );
